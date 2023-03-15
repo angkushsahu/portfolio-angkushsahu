@@ -84,6 +84,7 @@ button:hover {
 .shape_1,
 .shape_2 {
     position: absolute;
+    z-index: -1;
     $dimension: 30rem;
     width: $dimension;
     height: $dimension;

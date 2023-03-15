@@ -58,7 +58,7 @@
                 }
             }
         }
-        @include breakpoints(projects-page-1) {
+        @include breakpoints(projects-page) {
             grid-template-columns: repeat(1, 1fr);
         }
     }

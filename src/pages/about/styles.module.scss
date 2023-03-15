@@ -31,7 +31,7 @@
                     width: $dimension;
                     height: $dimension;
                 }
-                @include breakpoints(about-page-1) {
+                @include breakpoints(about-page) {
                     order: -1;
                     margin: 0 auto;
                 }
@@ -45,7 +45,7 @@
                     }
                 }
             }
-            @include breakpoints(about-page-1) {
+            @include breakpoints(about-page) {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 3rem;

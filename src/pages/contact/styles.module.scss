@@ -61,7 +61,7 @@
                 margin-top: 1.5rem;
                 width: 100%;
             }
-            @include breakpoints(contact-page-1) {
+            @include breakpoints(contact-page) {
                 max-width: none;
             }
         }
@@ -111,7 +111,7 @@
                     }
                 }
             }
-            @include breakpoints(contact-page-1) {
+            @include breakpoints(contact-page) {
                 display: none;
             }
         }

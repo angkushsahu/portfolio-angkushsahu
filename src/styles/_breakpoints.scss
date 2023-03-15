@@ -10,10 +10,10 @@
 $breakpoints-scale: (
     "mobile-xl": em(650),
     "buttons": em(700),
-    "home-page-1": em(1050),
-    "projects-page-1": em(1050),
-    "contact-page-1": em(1000),
-    "about-page-1": em(1000),
+    "home-page": em(1050),
+    "projects-page": em(1050),
+    "contact-page": em(1000),
+    "about-page": em(1000),
 );
 
 @mixin breakpoints($size) {
