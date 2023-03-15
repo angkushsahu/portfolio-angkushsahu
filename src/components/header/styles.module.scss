@@ -1,0 +1,99 @@
+@use "styles/variables" as var;
+@use "styles/mixins" as mixin;
+@use "styles/breakpoints" as *;
+
+.header {
+    @include mixin.flexBox(space-between);
+    min-height: var.$header-height;
+    background-color: transparent;
+
+    & > .logo {
+        font-weight: 700;
+        font-size: 2rem;
+        color: var.$primary-light;
+    }
+    & .navbar {
+        @include mixin.flexBox;
+        gap: 2rem;
+
+        & a {
+            position: relative;
+            padding-bottom: 0.1rem;
+            transition: color 300ms ease;
+            font-size: 1.4rem;
+            &.active_link {
+                color: var.$primary-light;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                right: 50%;
+                left: 50%;
+                bottom: -4px;
+                top: auto;
+                height: 3px;
+                background-image: var.$shape-gradient;
+                transition: left 300ms ease, right 300ms ease;
+            }
+            &:hover::after {
+                right: 0;
+                left: 0;
+            }
+            &:hover {
+                color: var.$primary-light;
+            }
+        }
+        @include breakpoints(mobile-xl) {
+            display: none;
+        }
+    }
+
+    & > .hamburger {
+        display: none;
+        font-size: 2.5rem;
+        cursor: pointer;
+        color: var.$primary-light;
+        @include breakpoints(mobile-xl) {
+            display: block;
+        }
+    }
+}
+
+.mobile_nav {
+    display: none;
+    background-color: var.$dark-color;
+    position: fixed;
+    inset: 0;
+    z-index: var.$header-z;
+    left: auto;
+    width: 100%;
+    padding: 1.5em;
+    transition: transform 300ms ease, opacity 300ms ease;
+    transform-origin: right;
+    transform: scaleX(0);
+    opacity: 0;
+
+    & > .cancel {
+        font-size: 2.5rem;
+        color: var.$primary-light;
+        cursor: pointer;
+        margin: 0 0 1rem auto;
+    }
+
+    &.show {
+        transform: scaleX(100%);
+        opacity: 1;
+    }
+
+    & > a {
+        &.active_link {
+            color: var.$primary-light;
+        }
+        width: fit-content;
+    }
+    @include breakpoints(mobile-xl) {
+        @include mixin.flexBox(flex-start, flex-start);
+        gap: 1.6rem;
+        flex-direction: column;
+    }
+}

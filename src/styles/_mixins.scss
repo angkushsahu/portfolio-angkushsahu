@@ -1,0 +1,12 @@
+@use "./variables" as var;
+
+@mixin flexBox($jc: center, $ai: center) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin extendColor($color: var.$primary-color) {
+    box-shadow: 0 0 0 1000vmax $color;
+    clip-path: inset(0 -1000vmax);
+}

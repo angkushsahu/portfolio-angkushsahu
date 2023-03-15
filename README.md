@@ -1,46 +1,28 @@
-# Getting Started with Create React App
+# 👋🏻 Angkush Sahu
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hey there, I am Angkush, a full-stack developer and programmer. I code websites which are performant and attractive.
 
-## Available Scripts
+I like to watch anime when I am not coding.
 
-In the project directory, you can run:
+This is my portfolio which contains information about all the necessary skill sets and projects that I have been working on.
 
-### `npm start`
+**Visit [My Portfolio](https://angkush.vercel.app)**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**[Download](https://drive.google.com/file/d/10sPB1KvlbEG0QWgZqcdCgODKqZj5J7WV/view?usp=sharing) my resume**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 👨🏻‍💻 Tech Stack
 
-### `npm test`
+![My Skills](https://skillicons.dev/icons?i=ts,react,sass&theme=dark)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🔗 Links
 
-### `npm run build`
+Contact Me from [here](https://angkush.vercel.app/contact)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[![portfolio](https://img.shields.io/badge/my_portfolio-teal?style=for-the-badge&logo=ko-fi&logoColor=white)](https://angkush.vercel.app/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/angkush-sahu-0409311bb)
+[![mail](https://img.shields.io/badge/Mail-red?style=for-the-badge&logo=gmail&logoColor=white)](https://angkush.vercel.app/contact)
+[![github](https://img.shields.io/badge/Github-gray?style=for-the-badge&logo=github&logoColor=white)](https://github.com/angkushsahu)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Website Preview
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Angkush Sahu](https://res.cloudinary.com/dvhucdquc/image/upload/v1678893083/portfolio_wallpaper/portfolio_mqkm3p.png)

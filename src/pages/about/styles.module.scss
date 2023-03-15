@@ -1,0 +1,95 @@
+@use "styles/variables" as var;
+@use "styles/mixins" as mixin;
+@use "styles/breakpoints" as *;
+
+.about {
+    padding: 1rem 0 5rem;
+    .about_me_section {
+        & > h1 {
+            margin: 1rem 0 4rem;
+        }
+        & > div {
+            @include mixin.flexBox(space-between);
+            & > .about_text_section > p {
+                max-width: 80ch;
+                line-height: 180%;
+                & > .link {
+                    color: var.$primary-light;
+                    &:hover {
+                        text-decoration: underline;
+                        text-decoration-thickness: 8;
+                        text-underline-position: under;
+                    }
+                }
+            }
+            & > .avatar_container {
+                $dimension: 30rem;
+                width: $dimension;
+                height: $dimension;
+                background-color: var.$primary-color;
+                & > img {
+                    width: $dimension;
+                    height: $dimension;
+                }
+                @include breakpoints(about-page-1) {
+                    order: -1;
+                    margin: 0 auto;
+                }
+                @include breakpoints(mobile-xl) {
+                    max-width: $dimension;
+                    width: 100%;
+                    height: auto;
+                    & > img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+            @include breakpoints(about-page-1) {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 3rem;
+            }
+        }
+        @include breakpoints(mobile-xl) {
+            & > h1 {
+                font-size: 3.2rem;
+            }
+        }
+    }
+    .education {
+        margin-top: 2rem;
+        &_details {
+            @include mixin.flexBox(flex-start, flex-start);
+            flex-wrap: wrap;
+            gap: 3rem;
+            padding-inline-start: 2rem;
+            counter-reset: list-counter;
+            .education_section {
+                max-width: 30rem;
+                width: 100%;
+                padding: 0 2rem;
+                counter-increment: list-counter;
+                position: relative;
+                isolation: isolate;
+                &::before {
+                    content: counter(list-counter);
+                    position: absolute;
+                    left: -6%;
+                    font-size: 2.5rem;
+                    color: #6d6d6d;
+                    font-weight: 700;
+                }
+                & > p {
+                    margin: 0;
+                    &:nth-child(1) {
+                        margin-bottom: 1rem;
+                    }
+                    &:nth-child(2) {
+                        color: var.$faded;
+                    }
+                }
+            }
+        }
+    }
+}

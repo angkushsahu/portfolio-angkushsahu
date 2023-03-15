@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Suspense } from "react";
+import { RouterProvider } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import { routing } from "components/app";
+import { Loading } from "components";
+import "react-toastify/dist/ReactToastify.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    return (
+        <main className="parent_root">
+            <div className="shape_1"></div>
+            <div className="shape_2"></div>
+            <div className="child_root">
+                <Suspense fallback={<Loading />}>
+                    <RouterProvider router={routing} />
+                </Suspense>
+            </div>
+            <ToastContainer position="top-center" theme="dark" />
+        </main>
+    );
 }
-
-export default App;

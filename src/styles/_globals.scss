@@ -1,0 +1,103 @@
+@use "./variables" as var;
+@use "./mixins" as mixin;
+@use "./breakpoints" as *;
+
+::-webkit-scrollbar {
+    width: 0.4rem;
+}
+::-webkit-scrollbar-track {
+    background-color: var.$primary-color;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var.$primary-dark;
+    width: 0.1rem;
+    border-radius: 1rem;
+}
+
+*::selection {
+    background-color: var.$primary-dark;
+    color: #ffffff;
+}
+
+.parent_root {
+    min-height: 100vh;
+    background-color: var.$primary-color;
+    color: #ffffff;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.child_root {
+    padding: 0 2rem;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.text_center {
+    text-align: center;
+}
+
+h1,
+.heading {
+    color: var.$primary-light;
+    font-weight: 800;
+    font-size: 5.2rem;
+}
+
+h2,
+.subheading {
+    font-weight: 700;
+    font-size: 3.2rem;
+}
+
+.button,
+button {
+    font-weight: 600;
+    letter-spacing: 0.1ch;
+    padding: 1.2rem 5rem;
+    border-radius: 4rem;
+    border: 1px solid var.$primary-dark;
+    color: var.$primary-light;
+    background-color: transparent;
+    transition: box-shadow 300ms ease;
+    @include breakpoints(buttons) {
+        padding: 1rem 4.5rem;
+        font-size: 1.4rem;
+        letter-spacing: 0.2ch;
+    }
+}
+
+.cta_button {
+    border: 1px solid var.$primary-dark;
+    background-image: var.$shape-gradient;
+    color: #ffffff;
+}
+
+.button:hover,
+button:hover {
+    background-image: var.$button-hover-gradient;
+    box-shadow: 0 0 35px var.$primary-dark;
+    color: #ffffff;
+}
+
+.shape_1,
+.shape_2 {
+    position: absolute;
+    $dimension: 30rem;
+    width: $dimension;
+    height: $dimension;
+    border-radius: 50%;
+    background-image: var.$shape-gradient;
+    filter: blur(96px);
+}
+
+.shape_1 {
+    top: 5%;
+    left: -24rem;
+}
+
+.shape_2 {
+    bottom: 0;
+    right: -24rem;
+}

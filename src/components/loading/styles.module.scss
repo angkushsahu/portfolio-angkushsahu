@@ -1,0 +1,27 @@
+@use "styles/variables" as var;
+@use "styles/mixins" as mixin;
+
+.loading {
+    min-height: 100vh;
+    padding: 1rem;
+    @include mixin.flexBox;
+    &.cancelHeaderHeight {
+        min-height: var.$rest-height;
+    }
+    & > h1 {
+        font-size: 6rem;
+        text-shadow: 1px 0px 10px var.$primary-dark;
+        animation: loading 1s ease-in-out infinite alternate-reverse;
+    }
+}
+
+@keyframes loading {
+    from {
+        font-size: 6rem;
+        opacity: 1;
+    }
+    from {
+        font-size: 4.5rem;
+        opacity: 0.35;
+    }
+}

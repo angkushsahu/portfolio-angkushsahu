@@ -1,0 +1,28 @@
+@use "styles/mixins" as mixin;
+@use "styles/breakpoints" as *;
+
+.error {
+    @include mixin.flexBox;
+    flex-direction: column;
+    padding: 1rem;
+    min-height: 100vh;
+    h1 {
+        font-size: 22rem;
+        margin: 0;
+        letter-spacing: 0.15ch;
+        line-height: 25rem;
+        @include breakpoints(mobile-xl) {
+            font-size: 14rem;
+            letter-spacing: 0.1ch;
+            line-height: 18rem;
+        }
+    }
+    h2 {
+        font-size: 2rem;
+        text-align: center;
+        line-height: 3rem;
+    }
+    button {
+        margin-top: 2rem;
+    }
+}

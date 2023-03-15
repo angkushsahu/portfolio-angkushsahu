@@ -1,0 +1,156 @@
+@use "styles/variables" as var;
+@use "styles/mixins" as mixin;
+@use "styles/breakpoints" as *;
+
+.home {
+    $padding-top: 10rem;
+    $padding-bottom: 15rem;
+    min-height: var.$rest-height;
+    padding: $padding-top 8rem $padding-bottom;
+    @include mixin.flexBox(space-between);
+    flex-direction: row;
+    .doc_heading {
+        margin: 0;
+        @include breakpoints(home-page-1) {
+            text-align: center;
+        }
+    }
+    .doc_heading .heading {
+        animation: glow 800ms ease-in-out infinite alternate-reverse;
+    }
+    .doc_heading span {
+        display: block;
+    }
+    .doc_heading span.heading {
+        font-weight: 800;
+        @include breakpoints(mobile-xl) {
+            font-size: 3.8rem;
+        }
+    }
+    .doc_heading span.subheading {
+        color: #ffffff;
+        font-size: 3.2rem;
+        font-weight: 700;
+        @include breakpoints(mobile-xl) {
+            font-size: 2.8rem;
+        }
+    }
+    .doc_heading + .thirdheading {
+        margin: 2.2rem 0 3.3rem;
+        font-weight: 600;
+        font-size: 2.2rem;
+        color: var.$faded;
+        @include breakpoints(home-page-1) {
+            text-align: center;
+        }
+        @include breakpoints(mobile-xl) {
+            font-size: 1.8rem;
+        }
+    }
+    & > div > .links {
+        @include mixin.flexBox(flex-start);
+        gap: 1.5em;
+        margin: 2em 0 3em 0;
+        & > a {
+            width: fit-content;
+            height: fit-content;
+            & > img {
+                width: 3em;
+                transition: box-shadow 250ms ease;
+            }
+            & > img:hover {
+                box-shadow: 0 0 45px var.$primary-dark;
+            }
+        }
+        @include breakpoints(home-page-1) {
+            justify-content: center;
+        }
+    }
+    & > div > .button_section {
+        @include mixin.flexBox(flex-start);
+        gap: 1em;
+        @include breakpoints(buttons) {
+            flex-direction: column;
+            & > .resume_button {
+                order: -1;
+            }
+        }
+    }
+    & > div > .circle_container {
+        $dimension: 20rem;
+        width: $dimension;
+        height: $dimension;
+        border-radius: 50%;
+        & > .circle {
+            background-image: var.$circle-gradient;
+            border: none;
+            outline: none;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            @include mixin.flexBox;
+            position: relative;
+            isolation: isolate;
+            animation: bounce-ball 1000ms linear infinite alternate-reverse;
+            &::before {
+                content: "";
+                position: absolute;
+                width: 80%;
+                height: 80%;
+                border-radius: 50%;
+                background-image: var.$shape-gradient;
+                transform: rotateZ(45deg);
+                filter: blur(20px);
+                transition: transform 300ms ease;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                width: 70%;
+                height: 3.2rem;
+                background-image: var.$shape-gradient;
+                border-radius: 50%;
+                bottom: -45%;
+                filter: blur(20px);
+                animation: bounce-ball-shadow 1000ms linear infinite alternate-reverse;
+            }
+            &:hover::before {
+                transform: rotateZ(90deg);
+            }
+        }
+    }
+    @include breakpoints(home-page-1) {
+        flex-direction: column;
+        justify-content: center;
+        gap: 8rem;
+        padding: $padding-top 0 $padding-bottom;
+    }
+    @include breakpoints(mobile-xl) {
+        padding: 3rem 0 $padding-bottom;
+    }
+}
+
+@keyframes bounce-ball {
+    from {
+        top: 5%;
+    }
+    to {
+        top: 0%;
+    }
+}
+@keyframes bounce-ball-shadow {
+    from {
+        bottom: -35%;
+    }
+    to {
+        bottom: -45%;
+    }
+}
+@keyframes glow {
+    from {
+        text-shadow: 0 0 45px var.$primary-dark;
+    }
+    to {
+        text-shadow: none;
+    }
+}
