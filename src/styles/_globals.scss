@@ -32,6 +32,18 @@
     padding: 0 2rem;
     max-width: 120rem;
     margin: 0 auto;
+    & > * {
+        animation: fade 300ms ease-out;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .text_center {

@@ -1,0 +1,72 @@
+@use "styles/variables" as var;
+@use "styles/mixins" as mixin;
+
+.splash {
+    @include mixin.flexBox;
+    gap: 0.8rem;
+    min-height: 95vh;
+    & > .left,
+    & > .a_text,
+    & > .s_text,
+    & > .slash,
+    & > .right {
+        $max-dimension: 10rem;
+        $dimension: 12vw;
+        max-width: $max-dimension;
+        max-height: $max-dimension;
+        width: $dimension;
+        height: $dimension;
+        & > path {
+            stroke: var.$primary-light;
+            stroke-width: 2;
+            fill: transparent;
+            animation: offset 3s ease-out forwards, fillAnimation 300ms 3s ease forwards;
+        }
+    }
+    & > .a_text,
+    & > .s_text {
+        $max-dimension: 14rem;
+        $dimension: 17vw;
+        max-width: $max-dimension;
+        max-height: $max-dimension;
+        width: $dimension;
+        height: $dimension;
+    }
+    & > .left > path {
+        $stroke: 485;
+        stroke-dasharray: $stroke;
+        stroke-dashoffset: $stroke;
+    }
+    & > .a_text > path {
+        $stroke: 670;
+        stroke-dasharray: $stroke;
+        stroke-dashoffset: $stroke;
+    }
+    & > .s_text > path {
+        $stroke: 750;
+        stroke-dasharray: $stroke;
+        stroke-dashoffset: $stroke;
+    }
+    & > .slash > path {
+        $stroke: 430;
+        stroke-dasharray: $stroke;
+        stroke-dashoffset: $stroke;
+    }
+    & > .right > path {
+        $stroke: 485;
+        stroke-dasharray: $stroke;
+        stroke-dashoffset: $stroke;
+    }
+}
+
+@keyframes offset {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fillAnimation {
+    100% {
+        fill: var.$primary-light;
+    }
+}
