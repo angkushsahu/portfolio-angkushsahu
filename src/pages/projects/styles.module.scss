@@ -22,9 +22,9 @@
                 overflow: hidden;
                 & > img {
                     object-fit: cover;
+                    transition: transform 400ms ease-in-out;
                 }
                 &:hover > img {
-                    transition: transform 400ms ease-in-out;
                     transform: scale(1.05);
                 }
             }
