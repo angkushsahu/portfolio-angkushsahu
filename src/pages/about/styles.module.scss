@@ -26,10 +26,11 @@
                 $dimension: 30rem;
                 width: $dimension;
                 height: $dimension;
-                background-color: var.$primary-color;
+                position: relative;
+                isolation: isolate;
                 & > img {
-                    width: $dimension;
-                    height: $dimension;
+                    position: absolute;
+                    inset: 0;
                 }
                 @include breakpoints(about-page) {
                     order: -1;
@@ -38,17 +39,11 @@
                 @include breakpoints(mobile-xl) {
                     max-width: $dimension;
                     width: 100%;
-                    height: auto;
-                    & > img {
-                        width: 100%;
-                        height: auto;
-                    }
                 }
             }
             @include breakpoints(about-page) {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 3rem;
             }
         }
         @include breakpoints(mobile-xl) {
