@@ -1,6 +1,6 @@
 import styles from "./styles.module.scss";
 import { Link } from "react-router-dom";
-import { routes } from "components/app";
+import { routes } from "routing";
 
 export default function Error() {
     document.title = "404 - Angkush Sahu";

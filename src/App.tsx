@@ -1,9 +1,7 @@
 import { Suspense, useState } from "react";
 import { RouterProvider } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
-import { routing } from "components/app";
-import { Loading, SplashScreen } from "components";
-import "react-toastify/dist/ReactToastify.css";
+import { router } from "routing";
+import { Loading, SplashScreen, Toast } from "components";
 
 export default function App() {
     const sessionItem = "splashScreen";
@@ -23,11 +21,11 @@ export default function App() {
             ) : (
                 <div className="child_root">
                     <Suspense fallback={<Loading />}>
-                        <RouterProvider router={routing} />
+                        <RouterProvider router={router} />
                     </Suspense>
                 </div>
             )}
-            <ToastContainer position="top-center" theme="dark" />
+            <Toast />
         </main>
     );
 }

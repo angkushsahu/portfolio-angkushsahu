@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { routes } from "components/app";
+import { routes } from "routing";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
 

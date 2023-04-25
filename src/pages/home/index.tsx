@@ -2,7 +2,7 @@ import styles from "./styles.module.scss";
 import { Link } from "react-router-dom";
 import linkedInIcon from "assets/linkedin.svg";
 import githubIcon from "assets/github.svg";
-import { routes } from "components/app";
+import { routes } from "routing";
 import Layout from "hoc";
 
 function Home() {

@@ -1,6 +1,6 @@
 import styles from "./styles.module.scss";
 import { Link } from "react-router-dom";
-import { routes } from "components/app";
+import { routes } from "routing";
 import { educationData } from "utils";
 import Layout from "hoc";
 import avatar from "assets/avatar.png";

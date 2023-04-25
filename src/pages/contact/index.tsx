@@ -1,6 +1,6 @@
 import styles from "./styles.module.scss";
 import { FormEvent, useRef, useState } from "react";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import { Loading } from "components";
 import { validateEmail } from "utils";
 import Layout from "hoc";
@@ -22,12 +22,12 @@ function Contact() {
         const message = messageRef.current?.value;
 
         if (!name || !email || !subject || !message) {
-            toast.warn("Please enter all the fields");
+            toast.error("Please enter all the fields");
             return;
         }
 
         if (!validateEmail(email)) {
-            toast.warn("Please enter a valid email address");
+            toast.error("Please enter a valid email address");
             return;
         }
 
