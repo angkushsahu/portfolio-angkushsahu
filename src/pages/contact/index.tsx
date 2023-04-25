@@ -1,8 +1,15 @@
 import styles from "./styles.module.scss";
 import { toast } from "react-hot-toast";
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { Input, Loading, Textarea } from "components";
 import Layout from "hoc";
+
+export interface IContact {
+    name: string;
+    email: string;
+    subject: string;
+    message: string;
+}
 
 function Contact() {
     document.title = "Contact - Angkush Sahu";
@@ -11,11 +18,11 @@ function Contact() {
         handleSubmit,
         formState: { errors, isSubmitting },
         reset,
-    } = useForm<FieldValues>({
+    } = useForm<IContact>({
         defaultValues: { name: "", email: "", subject: "", message: "" },
     });
 
-    const onContact: SubmitHandler<FieldValues> = async (data) => {
+    const onContact: SubmitHandler<IContact> = async (data) => {
         try {
             const response = await fetch("https://formspree.io/f/xjvlnwka", {
                 method: "POST",
