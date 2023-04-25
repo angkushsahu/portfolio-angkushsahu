@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss";
 import { toast } from "react-hot-toast";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { Input, Loading, Textarea } from "components";
+import { Input, Spinner, Textarea } from "components";
 import Layout from "hoc";
 
 export interface IContact {
@@ -38,9 +38,6 @@ function Contact() {
         }
     };
 
-    if (isSubmitting) {
-        return <Loading isComponent />;
-    }
     return (
         <section className={styles.contact}>
             <h1>Contact</h1>
@@ -79,7 +76,7 @@ function Contact() {
                         register={register("message", { required: { message: "Please enter your message for me", value: true } })}
                     />
                     <button type="submit" className={`cta_button ${styles.send_button}`} disabled={isSubmitting} title="Send e-mail">
-                        Send
+                        {isSubmitting ? <Spinner /> : "Send"}
                     </button>
                 </form>
                 <section className={styles.side_animation}>

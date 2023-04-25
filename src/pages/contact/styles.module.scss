@@ -19,6 +19,9 @@
             button.send_button {
                 margin-top: 1.5rem;
                 width: 100%;
+                &:disabled {
+                    cursor: not-allowed;
+                }
             }
             @include breakpoints(contact-page) {
                 max-width: none;
