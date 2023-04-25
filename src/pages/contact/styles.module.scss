@@ -16,47 +16,6 @@
             width: 100%;
             flex-direction: column;
             gap: 2.5rem;
-            .input_container {
-                cursor: pointer;
-                background-color: var.$dark-color;
-                position: relative;
-                width: 100%;
-                border-radius: 0.4rem;
-                padding: 0 1.6rem;
-                padding-bottom: 1rem;
-                transition: box-shadow 300ms ease;
-                &:focus-within {
-                    box-shadow: rgba(98, 98, 99, 0.25) 0px 10px 26px 0px, rgba(124, 120, 120, 0.3) 0px 0px 0px 1px, 0 0 10px #006a7b;
-                }
-                & > label {
-                    padding-top: 0.8rem;
-                    width: 100%;
-                    display: block;
-                    color: var.$faded;
-                    font-size: 1.4rem;
-                }
-                & > input,
-                & > textarea {
-                    width: 100%;
-                    background-color: transparent;
-                    color: inherit;
-                    border: none;
-                    outline: none;
-                    margin-top: 0.8rem;
-                    resize: none;
-                }
-                & > textarea {
-                    height: 13rem;
-                    scrollbar-width: thin;
-                    scrollbar-color: var.$primary-dark var.$dark-color;
-                    &::-webkit-scrollbar-track {
-                        background-color: var.$dark-color;
-                    }
-                    &::-webkit-scrollbar-thumb {
-                        background-color: var.$primary-dark;
-                    }
-                }
-            }
             button.send_button {
                 margin-top: 1.5rem;
                 width: 100%;
